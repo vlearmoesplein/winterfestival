@@ -1,0 +1,17 @@
+- day: "12 DEC"
+  events:
+    - time: "9:00 AM - 12:30 PM"
+      title: "Welkomstwoord & Openingstoespraak. Keynote: \"De Toekomst van Design\". Paneldiscussie: \"Duurzaam Ontwerpen\""
+    - time: "12:30 PM - 3:30 PM"
+      title: "Welkomstwoord & Openingstoespraak. Workshop: \"Meesterschap in (UX) Design\". Middagpauze & Sociale Netwerking."
+    - time: "3:30 PM - 6:30 PM"
+      title: "Breakout Sessies. Netwerkborrel."
+
+- day: "13 DEC"
+  events:
+    - time: "9:00 AM - 12:30 PM"
+      title: "Welkomstwoord & Openingstoespraak. Keynote: \"De Toekomst van Design\". Paneldiscussie: \"Duurzaam Ontwerpen\""
+    - time: "12:30 PM - 3:30 PM"
+      title: "Welkomstwoord & Openingstoespraak. Workshop: \"Meesterschap in (UX) Design\". Middagpauze & Sociale Netwerking."
+    - time: "3:30 PM - 6:30 PM"
+      title: "Breakout Sessies. Netwerkborrel."

@@ -1,0 +1,28 @@
+{{ define "main" }}
+<!-- Page Hero (split layout like artists page) -->
+<section class="page-hero page-hero-speakers">
+  <div class="container">
+    <div class="page-hero-speakers-content">
+      <div class="page-hero-speakers-left">
+        {{ with .Params.heroLabel }}
+        <span class="page-hero-label">// {{ . | upper }}</span>
+        {{ end }}
+        <h1 class="page-hero-title">{{ .Title }}</h1>
+      </div>
+      <div class="page-hero-speakers-right">
+        {{ if .Params.subtitle }}
+        <p class="page-hero-subtitle">{{ .Params.subtitle }}</p>
+        {{ end }}
+      </div>
+    </div>
+    <div class="page-hero-divider"></div>
+  </div>
+</section>
+
+<!-- Page Content -->
+<section class="page-content">
+  <div class="container">
+    <div class="content-wrapper">{{ .Content }}</div>
+  </div>
+</section>
+{{ end }}

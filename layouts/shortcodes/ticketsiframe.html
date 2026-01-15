@@ -1,0 +1,16 @@
+{{ if .Site.Params.tickets.enabled }}
+<div class="ticket-frame">
+    <iframe
+        src="{{ .Site.Params.tickets.url }}"
+        width="100%"
+        height="700"
+        frameborder="0"
+        title="Ticket bestellen"
+        loading="lazy">
+    </iframe>
+</div>
+{{ else }}
+<div class="ticket-info">
+    <p></p>Voor dit evenement zijn geen tickets nodig of ticketverkoop is nog niet gestart.</p>
+</div>
+{{ end }}

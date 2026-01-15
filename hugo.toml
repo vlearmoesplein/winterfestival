@@ -1,0 +1,104 @@
+baseURL = 'https://winterfestival.vlearmoesplein.nl/'
+languageCode = 'nl-NL'
+title = 'Stichting Vlearmoesplein'
+theme = 'winterfestival'
+
+[permalinks]
+  artiesten = "/artiesten/:slug/"
+  evenementen = "/evenement/:slug/"
+
+[params]
+  description = "Sluit je aan bij een geweldige conferentie-ervaring"
+
+  [params.hero]
+    title = "Welkom bij Conf"
+    subtitle = "Sluit je aan bij een geweldige conferentie-ervaring"
+    date = "12 December 2026"
+    location = "Vlearmoesplein, Neede"
+    registerLink = "#register"
+    scheduleLink = "#schedule"
+
+  [params.about]
+    enable = true
+    title = "Over de Conferentie"
+    subtitle = "Leer, maak contact en groei"
+    description = "Sluit je aan bij een ongelooflijke conferentie-ervaring met wereldklasse sprekers, baanbrekende onderwerpen en netwerkmogelijkheden."
+
+  [params.speakers]
+    enable = true
+    title = "Uitgelichte Artiesten"
+    subtitle = "Ontmoet onze geweldige artiesten"
+
+  [params.schedule]
+    enable = true
+    title = "Conferentieprogramma"
+    subtitle = "Plan je dag"
+
+  [params.sponsors]
+    enable = true
+    title = "Onze Sponsors"
+    subtitle = "Bedankt aan onze partners"
+
+  [params.contact]
+    enable = true
+    title = "Registreer Nu"
+    subtitle = "Zeker je plek vandaag"
+    formAction = "#"
+    phone = "+31 6 12345678"
+    email = "info@vlearmoesplein.nl"
+    address = "Vlearmoesplein, 7161 HZ Neede, Nederland"
+
+  [params.social]
+    facebook = "https://www.facebook.com/p/Stichting-Vlearmoes-plein-100064504639495/"
+    instagram = "https://instagram.com"
+    snapchat = "https://snapchat.com"
+    github = "https://github.com/vlearmoesplein"
+    linkedin = "https://linkedin.com"
+
+  [params.footer]
+    description = "Een moderne conferentie-ervaring"
+
+  [params.tickets]
+    enabled = true
+    salesEnabled = true
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+[[menu.main]]
+  name = "Over"
+  url = "#about"
+  weight = 2
+[[menu.main]]
+  name = "Artiesten"
+  url = "#speakers"
+  weight = 3
+[[menu.main]]
+  name = "Programma"
+  url = "#schedule"
+  weight = 4
+[[menu.main]]
+  name = "Sponsors"
+  url = "#sponsors"
+  weight = 5
+[[menu.main]]
+  name = "Registreer"
+  url = "#register"
+  weight = 6
+
+[[menu.footer]]
+  name = "Home"
+  url = "/"
+[[menu.footer]]
+  name = "Over"
+  url = "#about"
+[[menu.footer]]
+  name = "Artiesten"
+  url = "#speakers"
+[[menu.footer]]
+  name = "Programma"
+  url = "#schedule"
+[[menu.footer]]
+  name = "Privacybeleid"
+  url = "/privacybeleid/"

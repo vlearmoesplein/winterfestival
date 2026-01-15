@@ -1,0 +1,315 @@
+{{ define "main" }}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="snow-container">
+            <div class="snowflake snow-1"></div>
+            <div class="snowflake snow-2"></div>
+            <div class="snowflake snow-3"></div>
+            <div class="snowflake snow-1"></div>
+            <div class="snowflake snow-2"></div>
+            <div class="snowflake snow-3"></div>
+            <div class="snowflake snow-1"></div>
+            <div class="snowflake snow-2"></div>
+            <div class="snowflake snow-3"></div>
+            <div class="snowflake snow-1"></div>
+            <div class="snowflake snow-2"></div>
+            <div class="snowflake snow-3"></div>
+            <div class="snowflake snow-1"></div>
+            <div class="snowflake snow-2"></div>
+            <div class="snowflake snow-3"></div>
+            <div class="snowflake snow-1"></div>
+            <div class="snowflake snow-2"></div>
+            <div class="snowflake snow-3"></div>
+            <div class="snowflake snow-1"></div>
+            <div class="snowflake snow-2"></div>
+        </div>
+        <div class="hero-snow-bottom"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <img src="{{ "images/winterfestival-logo.png" | relURL }}" alt="{{ .Site.Title }}" class="hero-logo">
+                </h1>
+                <div class="hero-tags-bar">
+                    {{ if .Site.Params.tickets.salesEnabled }}
+                    <span class="tickets-available">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="tickets-icon" viewBox="0 0 16 16">
+                            <path d="M13.405 4.277a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10.25H13a3 3 0 0 0 .405-5.973M8.5 1.25a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1-.001 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4 4 0 0 1 8.5 1.25M2.625 11.5a.25.25 0 0 1 .25.25v.57l.501-.287a.25.25 0 0 1 .248.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25m2.75 2a.25.25 0 0 1 .25.25v.57l.501-.287a.25.25 0 0 1 .248.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25m5.5 0a.25.25 0 0 1 .25.25v.57l.501-.287a.25.25 0 0 1 .248.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25m-2.75-2a.25.25 0 0 1 .25.25v.57l.501-.287a.25.25 0 0 1 .248.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25m5.5 0a.25.25 0 0 1 .25.25v.57l.501-.287a.25.25 0 0 1 .248.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25"/>
+                        </svg>
+                        KAARTJES BESCHIKBAAR
+                    </span>
+                    {{ else }}
+                    <span class="tickets-available">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="tickets-icon" viewBox="0 0 16 16">
+                            <path d="M13.405 4.277a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10.25H13a3 3 0 0 0 .405-5.973M8.5 1.25a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1-.001 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4 4 0 0 1 8.5 1.25M2.625 11.5a.25.25 0 0 1 .25.25v.57l.501-.287a.25.25 0 0 1 .248.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25m2.75 2a.25.25 0 0 1 .25.25v.57l.501-.287a.25.25 0 0 1 .248.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25m5.5 0a.25.25 0 0 1 .25.25v.57l.501-.287a.25.25 0 0 1 .248.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25m-2.75-2a.25.25 0 0 1 .25.25v.57l.501-.287a.25.25 0 0 1 .248.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25m5.5 0a.25.25 0 0 1 .25.25v.57l.501-.287a.25.25 0 0 1 .248.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25"/>
+                        </svg>
+                        BINNENKORT BESCHIKBAAR
+                    </span>
+                    {{ end }}
+                    <div class="hero-tags-slider">
+                        <div class="hero-tags-track">
+                            <span class="hero-tag">+/ KINDERBINGO</span>
+                            <span class="hero-tag">+/ EETKRAMEN</span>
+                            <span class="hero-tag">+/ GLÜHWEIN</span>
+                            <span class="hero-tag">+/ KERSTMARKT</span>
+                            <span class="hero-tag">+/ WINTERPRET</span>
+                            <span class="hero-tag">+/ SCHAATSEN</span>
+                            <span class="hero-tag">+/ SNEEUWPOppen</span>
+                            <span class="hero-tag">+/ WARM CHOCOLADE</span>
+                            <span class="hero-tag">+/ LIVE MUZIEK</span>
+                            <span class="hero-tag">+/ KERSTVERHALEN</span>
+                            <!-- Duplicate for seamless loop -->
+                            <span class="hero-tag">+/ KINDERBINGO</span>
+                            <span class="hero-tag">+/ EETKRAMEN</span>
+                            <span class="hero-tag">+/ GLÜHWEIN</span>
+                            <span class="hero-tag">+/ KERSTMARKT</span>
+                            <span class="hero-tag">+/ WINTERPRET</span>
+                            <span class="hero-tag">+/ SCHAATSEN</span>
+                            <span class="hero-tag">+/ SNEEUWPOppen</span>
+                            <span class="hero-tag">+/ WARM CHOCOLADE</span>
+                            <span class="hero-tag">+/ LIVE MUZIEK</span>
+                            <span class="hero-tag">+/ KERSTVERHALEN</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-meta">
+                    <div class="hero-date">
+                        <strong>Datum:</strong> {{ .Site.Params.hero.date | default "12 December 2026" }}
+                    </div>
+                    <div class="hero-venue">
+                        <strong>Locatie:</strong> {{ .Site.Params.hero.location | default "Vlearmoesplein, Neede" }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    {{ if .Site.Params.mission.enable }}
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-icon">🎯</div>
+                <h3>Missie & Visie</h3>
+                <p>{{ .Site.Params.mission.description | default "Impact creëren door doelgerichtheid, onze grote missie en visie bepalen de lange weg voor betekenisvolle groei en innovatie." }}</p>
+            </div>
+            <div class="speakers-count">
+                <div class="speakers-count-number">{{ .Site.Params.speakers.count | default "20" }}</div>
+                <div class="speakers-count-label">Artiesten</div>
+                <p>{{ .Site.Params.mission.description | default "Impact creëren door doelgerichtheid." }}</p>
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Social Updates Section -->
+    {{ if .Site.Params.socialUpdates.enable }}
+    <section class="social-updates">
+        <div class="container">
+            <h3>Realtime updates via social media.</h3>
+            <div class="hashtag">#{{ .Site.Params.socialUpdates.hashtag | default "winterfestival2025" }}</div>
+            <p class="social-description">beleef live stream van het evenement op tijd</p>
+            <div class="social-stats">
+                <span class="joined-label">Aangesloten</span>
+                <span class="joined-number">{{ .Site.Params.socialUpdates.joined | default "10k" }}</span>
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Features Section -->
+    {{ if .Site.Params.features.enable }}
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Site.Params.features.title | default "All things to expect in Winterfestival" }}</h2>
+                <p class="section-subtitle">{{ .Site.Params.features.subtitle | default "Join us for an amazing experience as we unveil the most exciting highlights at our upcoming festival event." }}</p>
+            </div>
+            <div class="features-grid">
+                {{ range .Site.Params.features.items }}
+                <div class="feature-card">
+                    {{ if .image }}
+                    <div class="feature-image">
+                        <img src="{{ .image }}" alt="{{ .title }}">
+                    </div>
+                    {{ end }}
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .description }}</p>
+                    {{ if .link }}
+                    <a href="{{ .link }}" class="feature-link">Meer informatie →</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Ticket Pricing Section -->
+    {{ if .Site.Params.tickets.enable }}
+    <section class="tickets" id="tickets">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Site.Params.tickets.title | default "Get a ticket of your plan" }}</h2>
+                <p class="section-subtitle">{{ .Site.Params.tickets.subtitle | default "Choose the perfect ticket for your Winterfestival experience." }}</p>
+            </div>
+            <div class="tickets-grid">
+                {{ range .Site.Params.tickets.plans }}
+                <div class="ticket-card {{ .tier }}">
+                    <h3 class="ticket-name">{{ .name }}</h3>
+                    <p class="ticket-description">{{ .description }}</p>
+                    <div class="ticket-price">
+                        <span class="price-amount">{{ .price }}</span>
+                        <span class="price-unit">/ {{ .unit | default "1 persoon" }}</span>
+                    </div>
+                    <ul class="ticket-features">
+                        {{ range .features }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                    <a href="{{ .link | default "#register" }}" class="btn-ticket">Koop je kaartje</a>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Speakers Section -->
+    {{ if .Site.Params.speakers.enable }}
+    <section class="speakers" id="speakers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Site.Params.speakers.title | default "onze artiesten" }}</h2>
+                <p class="section-subtitle">{{ .Site.Params.speakers.subtitle | default "Ontmoet onze inspirerende artiesten die ideeën aanwakkeren en verbindingen bevorderen. Ze brengen expertise en passie naar elk gesprek." }}</p>
+                <a href="/artiesten/" class="view-all-link">Bekijk alle artiesten →</a>
+            </div>
+            <div class="speakers-grid">
+                {{ range where .Site.RegularPages "Section" "speakers" | first 4 }}
+                <div class="speaker-card">
+                    {{ if .Params.image }}
+                    <div class="speaker-image">
+                        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                    </div>
+                    {{ end }}
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">{{ .Title }}</h3>
+                        <p class="speaker-title">{{ .Params.role | default "Artiest" }}</p>
+                        {{ if .Params.company }}
+                        <p class="speaker-company">{{ .Params.company }}</p>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Schedule Section -->
+    {{ if .Site.Params.schedule.enable }}
+    <section class="schedule" id="schedule">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Site.Params.schedule.title | default "3-daagse agenda met sessies" }}</h2>
+                <a href="#schedule-details" class="view-all-link">Meer details →</a>
+            </div>
+            <div class="schedule-tabs" id="schedule-details">
+                {{ range $index, $day := .Site.Data.schedule }}
+                <div class="schedule-day {{ if eq $index 0 }}active{{ end }}">
+                    <h3 class="schedule-day-title">{{ .day }}</h3>
+                    <div class="schedule-items">
+                        {{ range .events }}
+                        <div class="schedule-item">
+                            <div class="schedule-time">{{ .time }}</div>
+                            <div class="schedule-details">
+                                <h4 class="schedule-title">{{ .title }}</h4>
+                                {{ if .speaker }}
+                                <p class="schedule-speaker">{{ .speaker }}</p>
+                                {{ end }}
+                                {{ if .description }}
+                                <p class="schedule-description">{{ .description }}</p>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Sponsors Section -->
+    {{ if .Site.Params.sponsors.enable }}
+    <section class="sponsors" id="sponsors">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Site.Params.sponsors.title | default "Onze Sponsors" }}</h2>
+                <a href="/sponsors" class="view-all-link">Bekijk alle sponsors →</a>
+            </div>
+            <div class="sponsors-grid">
+                {{ range .Site.Data.sponsors }}
+                <div class="sponsor-item">
+                    {{ if .logo }}
+                    <img src="{{ .logo }}" alt="{{ .name }}">
+                    {{ else }}
+                    <span>{{ .name }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Benefits Section -->
+    {{ if .Site.Params.benefits.enable }}
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Site.Params.benefits.title | default "Belangrijkste voordelen" }}</h2>
+                <p class="section-subtitle">{{ .Site.Params.benefits.subtitle | default "Benut het potentieel van het digitale, we ontwikkelen memorabele websites en helpen merken visueel." }}</p>
+            </div>
+            <div class="benefits-grid">
+                {{ range .Site.Params.benefits.items }}
+                <div class="benefit-card">
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .description }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Blog Section -->
+    {{ if .Site.Params.blog.enable }}
+    <section class="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ .Site.Params.blog.title | default "Laatste Artikelen" }}</h2>
+                <a href="/blog" class="view-all-link">Lees alle blogs →</a>
+            </div>
+            <div class="blog-grid">
+                {{ range where .Site.RegularPages "Section" "blog" | first 3 }}
+                <article class="blog-card">
+                    {{ if .Params.image }}
+                    <div class="blog-image">
+                        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                    </div>
+                    {{ end }}
+                    <div class="blog-content">
+                        <h3 class="blog-title">{{ .Title }}</h3>
+                        <div class="blog-meta">
+                            <span class="blog-author">{{ .Params.author | default "Admin" }}</span>
+                            <span class="blog-date">{{ .Date.Format "January 2, 2006" }}</span>
+                        </div>
+                    </div>
+                </article>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+{{ end }}

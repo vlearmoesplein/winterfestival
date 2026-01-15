@@ -1,0 +1,71 @@
+{{ define "main" }}
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <h1 class="page-hero-title">{{ .Title }}</h1>
+      <p class="page-hero-subtitle">
+        {{ .Params.subtitle | default "Sluit je aan terwijl we de meest opwindende hoogtepunten onthullen bij ons aankomende ontwerpevenement." }}
+      </p>
+      <a href="#register" class="btn-register-hero">Registreer Evenement</a>
+    </div>
+  </div>
+</section>
+
+<!-- Event Content -->
+<section class="event-detail">
+  <div class="container">
+    <div class="event-detail-content">
+      <div class="event-overview">
+        <h2>Basisoverzicht</h2>
+        <h4>
+          {{ .Params.overviewTitle | default "Uitzonderlijke Digitale Ervaringen Maken" }}
+        </h4>
+        <div class="event-description">{{ .Content }}</div>
+      </div>
+
+      {{ if .Params.keyPoints }}
+      <div class="event-key-points">
+        <h2>Belangrijkste Punten</h2>
+        <div class="key-points-grid">
+          {{ range .Params.keyPoints }}
+          <div class="key-point-card">
+            {{ if .image }}
+            <div class="key-point-image">
+              <img src="{{ .image }}" alt="{{ .title }}" />
+            </div>
+            {{ end }}
+            <h4>{{ .title }}</h4>
+            <p>{{ .description }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }} {{ if .Params.speakers }}
+      <div class="event-speakers">
+        <h2>Artiesten</h2>
+        <div class="event-speakers-grid">
+          {{ range .Params.speakers }}
+          <div class="event-speaker-card">
+            {{ if .image }}
+            <div class="event-speaker-image">
+              <img src="{{ .image }}" alt="{{ .name }}" />
+            </div>
+            {{ end }}
+            <h4>{{ .name }}</h4>
+            <p>{{ .role }}</p>
+            <p class="event-speaker-company">{{ .company }}</p>
+            {{ if .link }}
+            <a href="{{ .link }}" class="event-speaker-link"
+              >Artiest details →</a
+            >
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

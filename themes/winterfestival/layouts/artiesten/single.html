@@ -1,0 +1,62 @@
+{{ define "main" }}
+<!-- Speaker Detail Hero -->
+<section class="speaker-detail-hero">
+  <div class="container">
+    <div class="speaker-detail-header">
+      <div class="speaker-detail-image">
+        {{ if .Params.image }}
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+        {{ end }}
+      </div>
+      <div class="speaker-detail-info">
+        <h2>{{ .Title }}</h2>
+        <p class="speaker-detail-role">
+          {{ .Params.role | default "Artiest" }}
+        </p>
+        {{ if .Params.company }}
+        <p class="speaker-detail-company">{{ .Params.company }}</p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Speaker Content -->
+<section class="speaker-detail-content">
+  <div class="container">
+    <div class="speaker-bio">
+      <h3>WIE IS {{ .Title | upper }}…</h3>
+      <div class="speaker-bio-text">{{ .Content }}</div>
+    </div>
+  </div>
+</section>
+
+<!-- Related Speakers -->
+<section class="related-speakers">
+  <div class="container">
+    <h3>Andere Artiesten</h3>
+    <div class="speakers-grid">
+      {{ range where (where .Site.RegularPages "Section" "artiesten") "Title"
+      "!=" .Title | first 4 }}
+      <div class="speaker-card">
+        <a href="{{ .Permalink }}" class="speaker-card-link">
+          {{ if .Params.image }}
+          <div class="speaker-image">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+          </div>
+          {{ end }}
+          <div class="speaker-info">
+            <h3 class="speaker-name">{{ .Title }}</h3>
+            <p class="speaker-title">{{ .Params.role | default "Artiest" }}</p>
+            {{ if .Params.company }}
+            <p class="speaker-company">{{ .Params.company }}</p>
+            {{ end }}
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
