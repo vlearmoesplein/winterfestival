@@ -1,0 +1,149 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'nl-NL'
+title = 'Stichting Vlearmoesplein'
+theme = 'winterfestival'
+
+[permalinks]
+  artiesten = "/artiesten/:slug/"
+  evenementen = "/evenement/:slug/"
+
+[params]
+  description = "Stichting Vlearmoesplein - Winterfestivals en evenementen in Neede"
+  keywords = "vlearmoesplein, evenementen, neede, winterfestival, festival, organisatie"
+
+  [params.hero]
+    title = "Welkom bij Conf"
+    subtitle = "Sluit je aan bij een geweldige conferentie-ervaring"
+    date = "12 December 2026"
+    location = "Vlearmoesplein, Neede"
+    registerLink = "#register"
+    scheduleLink = "#schedule"
+
+  [params.about]
+    enable = true
+    title = "Over de Conferentie"
+    subtitle = "Leer, maak contact en groei"
+    description = "Sluit je aan bij een ongelooflijke conferentie-ervaring met wereldklasse sprekers, baanbrekende onderwerpen en netwerkmogelijkheden."
+
+  [params.speakers]
+    enable = true
+    title = "Uitgelichte Artiesten"
+    subtitle = "Ontmoet onze geweldige artiesten"
+
+  [params.schedule]
+    enable = true
+    title = "Conferentieprogramma"
+    subtitle = "Plan je dag"
+
+  [params.sponsors]
+    enable = true
+    title = "Onze Sponsors"
+    subtitle = "Bedankt aan onze partners"
+
+  [params.contact]
+    enable = true
+    title = "Registreer Nu"
+    subtitle = "Zeker je plek vandaag"
+    formAction = "#"
+
+  [params.social]
+    facebook = "https://www.facebook.com/p/Stichting-Vlearmoes-plein-100064504639495/"
+    instagram = "https://instagram.com"
+    snapchat = "https://snapchat.com"
+    github = "https://github.com/vlearmoesplein"
+    linkedin = "https://linkedin.com"
+
+  [params.footer]
+    description = "Een moderne conferentie-ervaring"
+
+  [params.tickets]
+    enabled = true
+    salesEnabled = true
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+[[menu.main]]
+  name = "Over"
+  url = "#about"
+  weight = 2
+[[menu.main]]
+  name = "Artiesten"
+  url = "#speakers"
+  weight = 3
+[[menu.main]]
+  name = "Programma"
+  url = "#schedule"
+  weight = 4
+[[menu.main]]
+  name = "Sponsors"
+  url = "#sponsors"
+  weight = 5
+[[menu.main]]
+  name = "Registreer"
+  url = "#register"
+  weight = 6
+
+[[menu.footer]]
+  name = "Home"
+  url = "/"
+[[menu.footer]]
+  name = "Over"
+  url = "#about"
+[[menu.footer]]
+  name = "Artiesten"
+  url = "#speakers"
+[[menu.footer]]
+  name = "Programma"
+  url = "#schedule"
+
+# Development settings
+[build]
+writeStats = true
+
+[static]
+
+[caches]
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = "10s"
+
+[caches.getcsv]
+dir = ":cacheDir/:project"
+maxAge = "10s"
+
+[caches.images]
+dir = ":resourceDir/_gen"
+maxAge = "720h"
+
+[caches.assets]
+dir = ":resourceDir/_gen"
+maxAge = "720h"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+style = "github"
+lineNos = false
+codeFences = true
+guessSyntax = true
+
+[minify]
+[minify.tdewolff]
+[minify.tdewolff.html]
+keepWhitespace = false
+
+[minify.tdewolff.css]
+precision = 0
+
+[minify.tdewolff.js]
+precision = 0
+
+# Development compatibility
+[security]
+[security.funcs]
+getenv = ["^HUGO_", "^GIT_"]

@@ -1,0 +1,60 @@
+{{ define "main" }} {{ if not .Site.Params.tickets.salesEnabled }}
+<!-- Tickets Not Available -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="page-hero-label">// Kaartjes</span>
+      <h1 class="page-hero-title">Kaartjes Binnenkort Beschikbaar</h1>
+      <p class="page-hero-subtitle">
+        De kaartverkoop start binnenkort. Blijf op de hoogte voor updates!
+      </p>
+    </div>
+  </div>
+</section>
+<section class="tickets-page">
+  <div class="container">
+    <div class="tickets-not-available">
+      <p>
+        De kaartverkoop voor het Winterfestival 2026 start binnenkort. Kom later
+        terug om je kaartjes te kopen!
+      </p>
+    </div>
+  </div>
+</section>
+{{ else }}
+<!-- Section 1: Tickets hero (split layout like artists page) -->
+<section class="page-hero page-hero-speakers">
+  <div class="container">
+    <div class="page-hero-speakers-content">
+      <div class="page-hero-speakers-left">
+        <span class="page-hero-label">// TICKETS</span>
+        <h1 class="page-hero-title">{{ .Title | default "Tickets" }}</h1>
+      </div>
+      <div class="page-hero-speakers-right">
+        <p class="page-hero-subtitle">
+          {{ .Params.subtitle | default "Koop je tickets en geniet van alle winterse gezelligheid op het Vlearmoesplein Winterfestival." }}
+        </p>
+      </div>
+    </div>
+    <div class="page-hero-divider"></div>
+  </div>
+</section>
+
+<!-- Section 2: (empty embed shell) -->
+<section class="tickets-page tickets-embed">
+  <div class="container">
+    <div class="tickets-embed-inner"></div>
+  </div>
+</section>
+
+<!-- Section 3: (empty FAQ shell with divider) -->
+<section class="tickets-page tickets-faq">
+  <div class="container">
+    <div class="tickets-faq-layout">
+      <div class="tickets-faq-left"></div>
+      <div class="tickets-faq-divider"></div>
+      <div class="tickets-faq-right"></div>
+    </div>
+  </div>
+</section>
+{{ end }} {{ end }}

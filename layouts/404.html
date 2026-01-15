@@ -1,0 +1,72 @@
+{{ define "main" }}
+    <!-- 404 Hero in site style -->
+    <section class="page-hero page-hero-speakers">
+        <div class="container">
+            <div class="page-hero-speakers-content">
+                <div class="page-hero-speakers-left">
+                    <span class="page-hero-label">// 404</span>
+                    <h1 class="page-hero-title">Pagina niet gevonden</h1>
+                </div>
+                <div class="page-hero-speakers-right">
+                    <p class="page-hero-subtitle">
+                        Oeps! De pagina die je zoekt is niet (meer) beschikbaar of bestaat niet.
+                        Gebruik de links hieronder om je weg op het Winterfestival weer te vinden.
+                    </p>
+                </div>
+            </div>
+            <div class="page-hero-divider"></div>
+        </div>
+    </section>
+
+    <!-- 404 Content -->
+    <section class="page-content page-404">
+        <div class="container">
+            <div class="page-404-inner">
+                <div class="page-404-main">
+                    <h2>Populaire bestemmingen</h2>
+                    <p>Misschien zocht je één van deze pagina's:</p>
+                    <div class="page-404-links">
+                        <a href="{{ "/" | relURL }}" class="btn-register-hero">Terug naar Home</a>
+                        <a href="{{ "/evenement/" | relURL }}" class="btn-register-hero">Evenement programma</a>
+                        <a href="{{ "/artiesten/" | relURL }}" class="btn-register-hero">Onze artiesten</a>
+                        {{ if .Site.Params.tickets.enabled }}
+                        <a href="{{ "/tickets/" | relURL }}" class="btn-register-hero">Tickets kopen</a>
+                        {{ end }}
+                        <a href="{{ "/bezoeken/" | relURL }}" class="btn-register-hero">Praktische info</a>
+                        <a href="{{ "/contact/" | relURL }}" class="btn-register-hero">Contact</a>
+                    </div>
+                </div>
+
+                <div class="page-404-help">
+                    <h3>Wat kun je doen?</h3>
+                    <ul>
+                        <li>Controleer of de URL juist is gespeld.</li>
+                        <li>Gebruik het hoofdmenu om naar een andere pagina te gaan.</li>
+                        <li>Ga terug naar de vorige pagina in je browser.</li>
+                        <li>Neem contact met ons op als je denkt dat er iets mis is met de site.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script>
+// Track 404 errors for analytics
+if (typeof gtag !== 'undefined') {
+    gtag('event', 'page_not_found', {
+        'page_title': '404 - Page Not Found',
+        'page_location': window.location.href
+    });
+}
+
+// Log the 404 for debugging
+console.log('404 Error - Page not found:', window.location.href);
+
+// Optional: Auto-redirect after 10 seconds (uncomment if desired)
+// setTimeout(function() {
+//     if (confirm('Wil je automatisch naar de homepage?')) {
+//         window.location.href = '/';
+//     }
+// }, 10000);
+</script>
+{{ end }}

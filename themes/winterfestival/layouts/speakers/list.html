@@ -1,0 +1,68 @@
+{{ define "main" }}
+<!-- Section 1: Title & intro -->
+<section class="page-hero page-hero-speakers">
+  <div class="container">
+    <div class="page-hero-speakers-content">
+      <div class="page-hero-speakers-left">
+        <span class="page-hero-label">// ARTIESTEN</span>
+        <h1 class="page-hero-title">
+          {{ .Title | default "HEADLINE ARTIESTEN VAN HET WINTERFESTIVAL" }}
+        </h1>
+      </div>
+      <div class="page-hero-speakers-right">
+        <p class="page-hero-subtitle">
+          {{ .Params.subtitle | default "Ontmoet onze artiesten die het Winterfestival tot leven wekken met muziek, verhalen en beleving." }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="page-hero-divider"></div>
+</section>
+
+<!-- Section 2: Artist grid -->
+<section class="speakers-page">
+  <div class="container">
+    <div class="speakers-grid">
+      {{ range where .Site.RegularPages "Section" "speakers" }}
+      <div class="speaker-card">
+        <a href="{{ .Permalink }}" class="speaker-card-link">
+          {{ if .Params.image }}
+          <div class="speaker-image">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+          </div>
+          {{ end }}
+          <div class="speaker-info">
+            <h3 class="speaker-name">{{ .Title }}</h3>
+            <p class="speaker-title">{{ .Params.role | default "Artiest" }}</p>
+            {{ if .Params.company }}
+            <p class="speaker-company">{{ .Params.company }}</p>
+            {{ end }}
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Tickets CTA -->
+<section class="cta-section cta-section-speakers">
+  <div class="container">
+    <div class="cta-content cta-content-speakers">
+      <div class="cta-speakers-text">
+        <span class="page-hero-label">// tickets</span>
+        <h2 class="cta-speakers-title">GET TICKETS NOW AND ENJOY BENEFITS</h2>
+        <p>
+          Reserveer vandaag nog je plek bij het Winterfestival en geniet van
+          alle optredens, winterse gezelligheid en extra voordelen.
+        </p>
+      </div>
+      <div class="cta-speakers-action">
+        <a href="/tickets/" class="cta-speakers-button"
+          >GET TICKETS <span class="btn-arrow">↗</span></a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

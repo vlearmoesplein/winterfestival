@@ -1,0 +1,11 @@
+name = "Conf"
+license = "MIT"
+licenselink = "https://github.com/yourusername/conf/blob/main/LICENSE"
+description = "A modern conference theme for Hugo"
+tags = ["conference", "event", "speakers", "schedule"]
+features = ["responsive", "speakers", "schedule", "sponsors"]
+min_version = "0.120.0"
+
+[author]
+  name = "Your Name"
+  homepage = "https://example.com"

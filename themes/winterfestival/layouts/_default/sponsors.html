@@ -1,0 +1,78 @@
+{{ define "main" }}
+<!-- Page Hero (split layout like artists page) -->
+<section class="page-hero page-hero-speakers">
+  <div class="container">
+    <div class="page-hero-speakers-content">
+      <div class="page-hero-speakers-left">
+        <span class="page-hero-label">// SPONSORS</span>
+        <h1 class="page-hero-title">{{ .Title | default "Onze Sponsors" }}</h1>
+      </div>
+      <div class="page-hero-speakers-right">
+        <p class="page-hero-subtitle">
+          {{ .Params.subtitle | default "Leer onze sponsoren kennen die het Winterfestival mogelijk maken." }}
+        </p>
+      </div>
+    </div>
+    <div class="page-hero-divider"></div>
+  </div>
+</section>
+
+<!-- Sponsors Section -->
+<section class="sponsors-page">
+  <div class="container">
+    {{ if .Site.Data.sponsors }} {{ $topSponsors := first 4 .Site.Data.sponsors
+    }} {{ $otherSponsors := after 4 .Site.Data.sponsors }} {{ if $topSponsors }}
+    <div class="sponsors-section">
+      <h3>Top Sponsors</h3>
+      <div class="sponsors-grid">
+        {{ range $topSponsors }}
+        <div class="sponsor-item-large">
+          {{ if .logo }}
+          <div class="sponsor-logo">
+            <img src="{{ .logo }}" alt="{{ .name }}" />
+          </div>
+          {{ end }}
+          <h4>{{ .name }}</h4>
+          {{ if .description }}
+          <p>{{ .description }}</p>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }} {{ if $otherSponsors }}
+    <div class="sponsors-section">
+      <h3>Andere Sponsors</h3>
+      <div class="sponsors-grid">
+        {{ range $otherSponsors }}
+        <div class="sponsor-item-large">
+          {{ if .logo }}
+          <div class="sponsor-logo">
+            <img src="{{ .logo }}" alt="{{ .name }}" />
+          </div>
+          {{ end }}
+          <h4>{{ .name }}</h4>
+          {{ if .description }}
+          <p>{{ .description }}</p>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }} {{ end }}
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Koop nu kaartjes en geniet van voordelen</h2>
+      <p>
+        {{ .Site.Params.cta.description | default "We geloven dat merkidentiteitsontwerp essentieel is. Het vangt de essentie van je bedrijf en weerspiegelt je unieke visie." }}
+      </p>
+      <a href="/tickets/" class="btn-register-hero">Kaartjes Kopen</a>
+    </div>
+  </div>
+</section>
+{{ end }}

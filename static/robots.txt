@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vlearmoesplein.nl/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Allow important pages
+Allow: /
+Allow: /winterfestival-2024/
+Allow: /tickets/
+Allow: /bezoeken/
+Allow: /evenementen/
+Allow: /contact/
+Allow: /over-ons/
+
+# Allow CSS and JS
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Block search engine indexing of certain file types
+Disallow: *.pdf$
+Disallow: *.doc$
+Disallow: *.docx$

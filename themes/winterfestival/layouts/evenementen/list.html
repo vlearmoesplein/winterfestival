@@ -1,0 +1,64 @@
+{{ define "main" }}
+    <!-- Page Hero -->
+    <section class="page-hero page-hero-events">
+        <div class="container">
+            <div class="page-hero-events-content">
+                <div class="page-hero-events-left">
+                    <span class="page-hero-label">// EVENEMENT</span>
+                    <h1 class="page-hero-title">{{ .Title | default "3-DAAGSE AGENDA MET SESSIES" }}</h1>
+                </div>
+                <div class="page-hero-events-right">
+                    <p class="page-hero-subtitle">{{ .Params.subtitle | default "Sluit je aan bij ons terwijl we de meest opwindende hoogtepunten onthullen bij ons aankomende evenement." }}</p>
+                    <a href="/tickets/" class="btn-register-hero">REGISTREER EVENEMENT <span class="btn-arrow">→</span></a>
+                </div>
+            </div>
+            <div class="page-hero-divider"></div>
+            <div class="page-hero-image">
+                <img src="{{ "images/overview.jpg" | relURL }}" alt="Evenement" class="events-hero-img">
+            </div>
+            <div class="page-hero-divider"></div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-page schedule-page-events">
+        <div class="container">
+            <div class="schedule-events-layout">
+                <div class="schedule-events-left">
+                    {{ range $index, $day := .Site.Data.schedule }}
+                    <div class="schedule-day-events {{ if eq $index 0 }}active{{ end }}">
+                        <h3 class="schedule-day-title-events">{{ .day }}</h3>
+                        <div class="schedule-items-events">
+                            {{ range .events }}
+                            <div class="schedule-item-events">
+                                <div class="schedule-time-events">{{ .time }}</div>
+                                <div class="schedule-details-events">
+                                    {{ if .title }}
+                                    <p class="schedule-title-events">{{ .title }}</p>
+                                    {{ end }}
+                                    {{ if .description }}
+                                    <p class="schedule-description-events">{{ .description }}</p>
+                                    {{ end }}
+                                </div>
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section cta-section-events">
+        <div class="container">
+            <div class="cta-content-events">
+                <h2>KOOP NU KAARTJES EN GENIET VAN VOORDELEN</h2>
+                <p>{{ .Site.Params.cta.description | default "We geloven dat merkidentiteitsontwerp essentieel is. Het vangt de essentie van je bedrijf en weerspiegelt je unieke visie." }}</p>
+                <a href="/tickets/" class="btn-cta-events">KAARTJES KOPEN <span class="btn-arrow-up">↗</span></a>
+            </div>
+        </div>
+    </section>
+{{ end }}
+

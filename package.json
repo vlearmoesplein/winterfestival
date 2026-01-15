@@ -1,0 +1,62 @@
+{
+  "name": "winterfestival-neede-website",
+  "version": "1.0.0",
+  "description": "Hugo website for Winterfestival Neede - organized by Vlearmoesplein Events",
+  "main": "index.js",
+  "scripts": {
+    "dev": "hugo server -D --navigateToChanged",
+    "start": "hugo server -D",
+    "build": "hugo --minify",
+    "build:draft": "hugo --buildDrafts --minify",
+    "clean": "rm -rf public resources",
+    "serve": "hugo server --bind 0.0.0.0 --port 1313",
+    "preview": "hugo server --environment production",
+    "check": "hugo --dry-run",
+    "lint": "htmlhint public/**/*.html",
+    "format": "prettier --write 'themes/**/*.{html,css,js}'",
+    "deploy:netlify": "npm run build && netlify deploy --prod --dir=public",
+    "deploy:surge": "npm run build && surge public winterfestival-neede.surge.sh",
+    "test": "hugo --dry-run && echo 'Build test passed!'",
+    "stats": "hugo --templateMetrics --templateMetricsHints"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vlearmoesplein/winterfestival-website.git"
+  },
+  "keywords": [
+    "hugo",
+    "static-site",
+    "festival",
+    "winterfestival",
+    "neede",
+    "events",
+    "netherlands",
+    "website"
+  ],
+  "author": {
+    "name": "Vlearmoesplein Events",
+    "email": "info@vlearmoesplein.nl",
+    "url": "https://vlearmoesplein.nl"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vlearmoesplein/winterfestival-website/issues"
+  },
+  "homepage": "https://vlearmoesplein.nl",
+  "devDependencies": {
+    "htmlhint": "^1.1.4",
+    "prettier": "^3.0.0",
+    "netlify-cli": "^17.0.0",
+    "surge": "^0.23.1"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
