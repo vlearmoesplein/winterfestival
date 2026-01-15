@@ -17,7 +17,7 @@
                     <a href="{{ "/" | relURL }}" class="navbar-link {{ if eq .RelPermalink "/" }}active{{ end }}">HOME</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="{{ "/evenement/" | relURL }}" class="navbar-link {{ if or (eq .RelPermalink "/events/") (eq .RelPermalink "/evenement/") }}active{{ end }}">EVENEMENT</a>
+                    <a href="{{ "/evenement/" | relURL }}" class="navbar-link {{ if or (eq .RelPermalink "/evenementen/") (eq .RelPermalink "/evenement/") }}active{{ end }}">EVENEMENT</a>
                 </li>
                 <li class="navbar-item">
                     <a href="{{ "/artiesten/" | relURL }}" class="navbar-link {{ if or (eq .RelPermalink "/speakers/") (eq .RelPermalink "/artiesten/") }}active{{ end }}">ARTIESTEN</a>
