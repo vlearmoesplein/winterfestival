@@ -14,20 +14,20 @@
             </button>
             <ul class="navbar-menu">
                 <li class="navbar-item">
-                    <a href="/" class="navbar-link {{ if eq .RelPermalink "/" }}active{{ end }}">HOME</a>
+                    <a href="{{ "/" | relURL }}" class="navbar-link {{ if eq .RelPermalink "/" }}active{{ end }}">HOME</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="/evenement/" class="navbar-link {{ if or (eq .RelPermalink "/events/") (eq .RelPermalink "/evenement/") }}active{{ end }}">EVENEMENT</a>
+                    <a href="{{ "/evenement/" | relURL }}" class="navbar-link {{ if or (eq .RelPermalink "/evenementen/") (eq .RelPermalink "/evenement/") }}active{{ end }}">EVENEMENT</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="/artiesten/" class="navbar-link {{ if or (eq .RelPermalink "/speakers/") (eq .RelPermalink "/artiesten/") }}active{{ end }}">ARTIESTEN</a>
+                    <a href="{{ "/artiesten/" | relURL }}" class="navbar-link {{ if or (eq .RelPermalink "/speakers/") (eq .RelPermalink "/artiesten/") }}active{{ end }}">ARTIESTEN</a>
                 </li>
                 <li class="navbar-item has-dropdown">
                     <a href="#" class="navbar-link {{ if or (eq $current "/contact/") (eq $current "/sponsors/") (eq $current "/our-sponsors/") (eq $current "/over-ons/") }}active{{ end }}">PAGINA'S <span class="dropdown-arrow">▼</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/contact/" class="{{ if eq $current "/contact/" }}active{{ end }}">Contact</a></li>
-                        <li><a href="/sponsors/" class="{{ if or (eq $current "/sponsors/") (eq $current "/our-sponsors/") }}active{{ end }}">Sponsors</a></li>
-                        <li><a href="/over-ons/" class="{{ if eq $current "/over-ons/" }}active{{ end }}">Over Ons</a></li>
+                        <li><a href="{{ "/contact/" | relURL }}" class="{{ if eq $current "/contact/" }}active{{ end }}">Contact</a></li>
+                        <li><a href="{{ "/sponsors/" | relURL }}" class="{{ if or (eq $current "/sponsors/") (eq $current "/our-sponsors/") }}active{{ end }}">Sponsors</a></li>
+                        <li><a href="{{ "/over-ons/" | relURL }}" class="{{ if eq $current "/over-ons/" }}active{{ end }}">Over Ons</a></li>
                     </ul>
                 </li>
             </ul>
@@ -60,7 +60,7 @@
                     {{ end }}
                 </div>
                 {{ if .Site.Params.tickets.salesEnabled }}
-                <a href="/tickets/" class="btn-register">TICKETS <span class="btn-arrow">→</span></a>
+                <a href="{{ "/tickets/" | relURL }}" class="btn-register">TICKETS <span class="btn-arrow">→</span></a>
                 {{ else }}
                 <span class="btn-register btn-register-disabled">BINNENKORT <span class="btn-arrow">→</span></span>
                 {{ end }}

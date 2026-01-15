@@ -181,7 +181,7 @@
             <div class="section-header">
                 <h2 class="section-title">{{ .Site.Params.speakers.title | default "onze artiesten" }}</h2>
                 <p class="section-subtitle">{{ .Site.Params.speakers.subtitle | default "Ontmoet onze inspirerende artiesten die ideeën aanwakkeren en verbindingen bevorderen. Ze brengen expertise en passie naar elk gesprek." }}</p>
-                <a href="/artiesten/" class="view-all-link">Bekijk alle artiesten →</a>
+                <a href="{{ "/artiesten/" | relURL }}" class="view-all-link">Bekijk alle artiesten →</a>
             </div>
             <div class="speakers-grid">
                 {{ range where .Site.RegularPages "Section" "speakers" | first 4 }}
@@ -246,7 +246,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">{{ .Site.Params.sponsors.title | default "Onze Sponsors" }}</h2>
-                <a href="/sponsors" class="view-all-link">Bekijk alle sponsors →</a>
+                <a href="{{ "/sponsors" | relURL }}" class="view-all-link">Bekijk alle sponsors →</a>
             </div>
             <div class="sponsors-grid">
                 {{ range .Site.Data.sponsors }}
@@ -289,7 +289,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">{{ .Site.Params.blog.title | default "Laatste Artikelen" }}</h2>
-                <a href="/blog" class="view-all-link">Lees alle blogs →</a>
+                <a href="{{ "/blog" | relURL }}" class="view-all-link">Lees alle blogs →</a>
             </div>
             <div class="blog-grid">
                 {{ range where .Site.RegularPages "Section" "blog" | first 3 }}

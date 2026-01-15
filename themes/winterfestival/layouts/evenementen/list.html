@@ -9,7 +9,7 @@
                 </div>
                 <div class="page-hero-events-right">
                     <p class="page-hero-subtitle">{{ .Params.subtitle | default "Sluit je aan bij ons terwijl we de meest opwindende hoogtepunten onthullen bij ons aankomende evenement." }}</p>
-                    <a href="/tickets/" class="btn-register-hero">REGISTREER EVENEMENT <span class="btn-arrow">→</span></a>
+                    <a href="{{ "/tickets/" | relURL }}" class="btn-register-hero">REGISTREER EVENEMENT <span class="btn-arrow">→</span></a>
                 </div>
             </div>
             <div class="page-hero-divider"></div>
@@ -56,7 +56,7 @@
             <div class="cta-content-events">
                 <h2>KOOP NU KAARTJES EN GENIET VAN VOORDELEN</h2>
                 <p>{{ .Site.Params.cta.description | default "We geloven dat merkidentiteitsontwerp essentieel is. Het vangt de essentie van je bedrijf en weerspiegelt je unieke visie." }}</p>
-                <a href="/tickets/" class="btn-cta-events">KAARTJES KOPEN <span class="btn-arrow-up">↗</span></a>
+                <a href="{{ "/tickets/" | relURL }}" class="btn-cta-events">KAARTJES KOPEN <span class="btn-arrow-up">↗</span></a>
             </div>
         </div>
     </section>
