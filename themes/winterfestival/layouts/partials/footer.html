@@ -6,7 +6,7 @@
                     <img src="{{ "images/winterfestival-logo.png" | relURL }}" alt="{{ .Site.Title }}" class="footer-logo-img">
                 </div>
                 <p class="footer-description">{{ .Site.Params.footer.description | default "We helpen lokale bedrijven en diensten de markt te betreden, en bekende merken om een publiek uit te breiden." }}</p>
-                <a href="/contact/" class="footer-contact-link">NEEM CONTACT OP</a>
+                <a href="{{ "/contact/" | relURL }}" class="footer-contact-link">NEEM CONTACT OP</a>
                 <div class="footer-social">
                     {{ if .Site.Params.social.facebook }}
                     <a href="{{ .Site.Params.social.facebook }}" target="_blank" rel="noopener" class="footer-social-icon">
@@ -39,11 +39,11 @@
             <div class="footer-column">
                 <h4 class="footer-heading">SNELKE LINKS</h4>
                 <ul class="footer-links">
-                    <li><a href="/">HOME</a></li>
-                    <li><a href="/evenement/">OVER HET EVENEMENT</a></li>
-                    <li><a href="/artiesten/">ARTIESTEN</a></li>
-                    <li><a href="/evenement/">WORKSHOP SESSIES</a></li>
-                    <li><a href="/sponsors/">SPONSOR PARTNERS</a></li>
+                    <li><a href="{{ "/" | relURL }}">HOME</a></li>
+                    <li><a href="{{ "/evenement/" | relURL }}">OVER HET EVENEMENT</a></li>
+                    <li><a href="{{ "/artiesten/" | relURL }}">ARTIESTEN</a></li>
+                    <li><a href="{{ "/evenement/" | relURL }}">WORKSHOP SESSIES</a></li>
+                    <li><a href="{{ "/sponsors/" | relURL }}">SPONSOR PARTNERS</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -64,27 +64,27 @@
                 <h4 class="footer-heading">BEGIN</h4>
                 <ul class="footer-links">
                     {{ if .Site.Params.tickets.salesEnabled }}
-                    <li><a href="/tickets/">NU REGISTREREN</a></li>
-                    <li><a href="/tickets/">KAARTJES KOPEN</a></li>
+                    <li><a href="{{ "/tickets/" | relURL }}">NU REGISTREREN</a></li>
+                    <li><a href="{{ "/tickets/" | relURL }}">KAARTJES KOPEN</a></li>
                     {{ end }}
-                    <li><a href="/gallery/">ONZE GALERIJ</a></li>
+                    <li><a href="{{ "/gallery/" | relURL }}">ONZE GALERIJ</a></li>
                     <li><a href="#newsletter">BLIJF OP DE HOOGTE</a></li>
-                    <li><a href="/servicevoorwaarden/">SERVICEVOORWAARDEN</a></li>
+                    <li><a href="{{ "/servicevoorwaarden/" | relURL }}">SERVICEVOORWAARDEN</a></li>
                 </ul>
             </div>
         </div>
         {{ if .Site.Params.tickets.salesEnabled }}
         <div class="footer-cta">
-            <a href="/tickets/" class="btn-register-footer">NU REGISTREREN <span class="btn-arrow-up">↗</span></a>
+            <a href="{{ "/tickets/" | relURL }}" class="btn-register-footer">NU REGISTREREN <span class="btn-arrow-up">↗</span></a>
         </div>
         {{ end }}
         <div class="footer-divider"></div>
             <div class="footer-bottom">
             <p class="footer-copyright">&copy; 2026 | Stichting Vlearmoesplein. Alle rechten voorbehouden.</p>
             <div class="footer-legal">
-                <a href="/servicevoorwaarden/">SERVICEVOORWAARDEN</a>
-                <a href="/privacybeleid/">PRIVACYBELEID</a>
-                <a href="/huisregels/">HUISREGELS</a>
+                <a href="{{ "/servicevoorwaarden/" | relURL }}">SERVICEVOORWAARDEN</a>
+                <a href="{{ "/privacybeleid/" | relURL }}">PRIVACYBELEID</a>
+                <a href="{{ "/huisregels/" | relURL }}">HUISREGELS</a>
             </div>
         </div>
     </div>
